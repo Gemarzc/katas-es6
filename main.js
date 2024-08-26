@@ -9,4 +9,4 @@ por consola la suma de los dos parametros.
 const showSum = (a = 10, b = 5) => {
   console.log(a + b)
 }
-showSum(6)
+showSum(7, 8)
