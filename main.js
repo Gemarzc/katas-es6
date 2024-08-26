@@ -24,7 +24,9 @@ y comprueba que todo esta bien imprimiendolo.
 
 const car = {name: 'Mazda 6', itv: [2015, 2011, 2020] } */
 
-const fruits = ['Banana', 'Strawberry', 'Orange']
+const animalFunction = () => {
+  return { name: 'Bengal Tiger', race: 'Tiger' }
+}
+const { name: nameAnimal, race } = animalFunction()
 
-const [fruit1, fruit2, fruit3] = fruits
-console.log(`${fruit1} ${fruit2} ${fruit3}`)
+console.log(`${nameAnimal} ${race}`)
