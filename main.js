@@ -24,11 +24,7 @@ y comprueba que todo esta bien imprimiendolo.
 
 const car = {name: 'Mazda 6', itv: [2015, 2011, 2020] } */
 
-const game = {
-  title: 'The last us 2',
-  gender: ['action', 'zombie', 'survival'],
-  year: 2020
-}
+const fruits = ['Banana', 'Strawberry', 'Orange']
 
-const { title, gender, year } = game
-console.log(`${title} ${gender} ${year}`)
+const [fruit1, fruit2, fruit3] = fruits
+console.log(`${fruit1} ${fruit2} ${fruit3}`)
