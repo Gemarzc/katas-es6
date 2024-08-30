@@ -26,6 +26,10 @@ const mutations = [
 	señor mayor como Personal Trainer'}
 ]; */
 
-const numbers = [32, 21, 63, 95, 100, 67, 43]
+const movies = [
+  { title: 'Madagascar', stars: 4.5, date: 2015 },
+  { title: 'Origen', stars: 5, date: 2010 },
+  { title: 'Your Name', stars: 5, date: 2016 }
+]
 
-console.log(numbers.find((number) => number === 100))
+console.log(movies.find((movie) => movie.date === 2010))
