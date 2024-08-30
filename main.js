@@ -38,8 +38,13 @@ const streamers = [
   { name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us' }
 ]
 
-const filtered = streamers.filter(
-  (streamer) => streamer.gameMorePlayed === 'League of Legends'
-)
+const filtered = streamers.filter((streamer) => {
+  if (streamer.gameMorePlayed.includes('Legends')) {
+    if (streamer.age > 35) {
+      streamer.gameMorePlayed = streamer.gameMorePlayed.toUpperCase()
+    }
+    return streamer
+  }
+})
 
 console.log(filtered)
