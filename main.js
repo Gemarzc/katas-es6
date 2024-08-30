@@ -27,19 +27,19 @@ const cities = [
 	{isVisited:false, name: 'Seul'}
 ]; */
 
-const users2 = [
-  { id: 1, name: 'Abel' },
-  { id: 2, name: 'Julia' },
-  { id: 3, name: 'Pedro' },
-  { id: 4, name: 'Amanda' }
+const cities = [
+  { isVisited: true, name: 'Tokyo' },
+  { isVisited: false, name: 'Madagascar' },
+  { isVisited: true, name: 'Amsterdam' },
+  { isVisited: false, name: 'Seul' }
 ]
 
-const names2 = users2.map((user) => {
-  if (user.name[0] === 'A') {
-    return 'Anacleto'
+const citiesList = cities.map((city) => {
+  if (city.isVisited === true) {
+    return (city.name += ' (Visitado)')
   } else {
-    return user.name
+    return city.name
   }
 })
 
-console.log(names2)
+console.log(citiesList)
