@@ -32,6 +32,6 @@ Además, pon el valor de la propiedad .gameMorePlayed a MAYUSCULAS cuando
 .age sea mayor que 35. */
 
 const ages = [22, 14, 24, 55, 65, 21, 12, 13, 90]
-const filtered = ages.filter((age) => age > 18)
+const filtered = ages.filter((age) => age % 2 === 0)
 
 console.log(filtered)
