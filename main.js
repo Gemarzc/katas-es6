@@ -1,22 +1,41 @@
-/* 8.1 Dado el siguiente javascript filtra los videojuegos por gender = 'RPG' usando 
-.filter() y usa .reduce() para conseguir la media de sus .score. 
-La función .find() también podría ayudarte para el contrar el genero 'RPG' en el 
-array .gender. */
+/* Dado el siguiente javascript usa forof para recorrer el array de películas, 
+genera un nuevo array con las categorías de las películas e imprime por 
+consola el array de categorías. Ten en cuenta que las categorías no deberían 
+repetirse.
 
-const videogames = [
-  { name: 'Final Fantasy VII', genders: ['RPG'], score: 9.5 },
-  { name: 'Assasins Creed Valhala', genders: ['Aventura', 'RPG'], score: 4.5 },
-  { name: 'The last of Us 2', genders: ['Acción', 'Aventura'], score: 9.8 },
-  { name: 'Super Mario Bros', genders: ['Plataforma'], score: 8.5 },
-  { name: 'Genshin Impact', genders: ['RPG', 'Aventura'], score: 7.5 },
-  { name: 'Legend of Zelda: Breath of the wild', genders: ['RPG'], score: 10 }
+Para filtrar las categorías puedes ayudarte de la función .includes().*/
+
+const movies = [
+  {
+    title: 'Bracula: Condemor II',
+    duration: 192,
+    categories: ['comedia', 'aventura']
+  },
+  {
+    title: 'Spider-Man: No Way Home',
+    duration: 122,
+    categories: ['aventura', 'acción']
+  },
+  {
+    title: 'The Voices',
+    duration: 223,
+    categories: ['comedia', 'thriller']
+  },
+  {
+    title: 'Shrek',
+    duration: 111,
+    categories: ['comedia', 'aventura', 'animación']
+  }
 ]
-const rpgGames = videogames.filter((game) => game.genders.includes('RPG'))
 
-const totalScore = rpgGames.reduce(
-  (accumulator, game) => accumulator + game.score,
-  0
-)
-const averageScore = totalScore / rpgGames.length
+let categories = []
 
-console.log('La media de las puntuaciones es:', averageScore)
+for (const movie of movies) {
+  for (const category of movie.categories) {
+    if (!categories.includes(category)) {
+      categories.push(category)
+    }
+  }
+}
+
+console.log(categories)
