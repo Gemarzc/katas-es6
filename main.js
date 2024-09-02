@@ -1,41 +1,54 @@
-/* Dado el siguiente javascript usa forof para recorrer el array de películas, 
-genera un nuevo array con las categorías de las películas e imprime por 
-consola el array de categorías. Ten en cuenta que las categorías no deberían 
-repetirse.
+/* Dado el siguiente javascript usa forof y forin para hacer la media del 
+volumen de todos los sonidos favoritos que tienen los usuarios. */
 
-Para filtrar las categorías puedes ayudarte de la función .includes().*/
-
-const movies = [
+const users = [
   {
-    title: 'Bracula: Condemor II',
-    duration: 192,
-    categories: ['comedia', 'aventura']
+    name: 'Alberto',
+    favoritesSounds: {
+      waves: { format: 'mp3', volume: 50 },
+      rain: { format: 'ogg', volume: 60 },
+      firecamp: { format: 'mp3', volume: 80 }
+    }
   },
   {
-    title: 'Spider-Man: No Way Home',
-    duration: 122,
-    categories: ['aventura', 'acción']
+    name: 'Antonio',
+    favoritesSounds: {
+      waves: { format: 'mp3', volume: 30 },
+      shower: { format: 'ogg', volume: 55 },
+      train: { format: 'mp3', volume: 60 }
+    }
   },
   {
-    title: 'The Voices',
-    duration: 223,
-    categories: ['comedia', 'thriller']
+    name: 'Pedro',
+    favoritesSounds: {
+      shower: { format: 'mp3', volume: 50 },
+      train: { format: 'ogg', volume: 60 },
+      firecamp: { format: 'mp3', volume: 80 }
+    }
   },
   {
-    title: 'Shrek',
-    duration: 111,
-    categories: ['comedia', 'aventura', 'animación']
+    name: 'Cristina',
+    favoritesSounds: {
+      waves: { format: 'mp3', volume: 67 },
+      wind: { format: 'ogg', volume: 35 },
+      firecamp: { format: 'mp3', volume: 60 }
+    }
   }
 ]
 
-let categories = []
+let totalVolume = 0
+let soundCount = 0
 
-for (const movie of movies) {
-  for (const category of movie.categories) {
-    if (!categories.includes(category)) {
-      categories.push(category)
-    }
+for (const user of users) {
+  for (const sound in user.favoritesSounds) {
+    totalVolume += user.favoritesSounds[sound].volume
+    soundCount++
   }
 }
 
-console.log(categories)
+const mediaVolume = totalVolume / soundCount
+
+console.log(
+  'La media de los sonidos favoritos de los usuarios es de',
+  mediaVolume
+)
