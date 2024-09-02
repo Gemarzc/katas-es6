@@ -32,11 +32,8 @@ const exams = [
   { name: 'Keanu Reeves', score: 10 }
 ]
 
-const totalScoreApproved = exams.reduce((accumulator, exam) => {
-  if (exam.score >= 5) {
-    return accumulator + exam.score
-  }
-  return accumulator
-}, 0)
+const mediaScore =
+  exams.reduce((accumulator, exam) => accumulator + exam.score, 0) /
+  exams.length
 
-console.log(totalScoreApproved)
+console.log(mediaScore)
